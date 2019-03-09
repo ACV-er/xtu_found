@@ -17,7 +17,7 @@
     });
 
 
-    Route::group(['middleware' => 'cookie'], function () {
+//    Route::group(['middleware' => 'cookie'], function () {
         Route::post('/login', 'UserController@login');
 
         Route::get('/laf', 'LAFController@postList');
@@ -43,4 +43,4 @@
 
             Route::match(['get', 'post'], '/finish/{id}', 'LAFController@finishPost')->where(["id"=>"/^\d+$/"]);
         });
-    });
+//    });
