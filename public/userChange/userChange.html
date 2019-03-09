@@ -16,7 +16,7 @@
 	<body>
 		<nav><i class="back fa fa-reply" onclick="window.history.go(-1)"></i>修改信息</nav>
 		<div id="head">
-			<form class="head">
+			<form id="avatar" class="head">
 				<input type="file" id="fileBtn" name="avatar" v-on:change="upload('#fileBtn', '#img');" accept="image/*" capture="camera"/ v-model="avatar" >
 				<img v-bind:src="imgUrl" id="img" >
 			</form>
