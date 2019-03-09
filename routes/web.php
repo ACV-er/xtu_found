@@ -21,7 +21,7 @@
         Route::post('/login', 'UserController@login');
 
         Route::get('/laf', 'LAFController@postList');
-        Route::get('/laf/{id}', 'LAFController@post')->where(['id'=>'/^\d+$/']);
+        Route::get('/laf/{id}', 'LAFController@post')->where(['id'=>'[0-9]+']);
         Route::post('/search', 'LAFController@search');
 
         Route::group(['middleware' => 'loginCheck'], function () {
@@ -32,13 +32,13 @@
             Route::get('/user/info', 'UserController@getUserInfo');
             Route::post('/user/avatar', 'UserController@saveAvatar');
 
-            Route::match(['get', 'post'], '/mark/{id}', 'LAFController@markPost')->where(['id'=>'/^\d+$/']);
+            Route::match(['get', 'post'], '/mark/{id}', 'LAFController@markPost')->where(['id'=>'[0-9]+']);
 
             Route::post('/submit', 'LAFController@submitPost')->middleware('deduplicate');
 
-            Route::post('/update/{id}', 'LAFController@updatePost')->where(['id'=>'/^\d+$/']);
+            Route::post('/update/{id}', 'LAFController@updatePost')->where(['id'=>'[0-9]+']);
 
-            Route::match(['get', 'post'], '/finish/{id}', 'LAFController@finishPost')->where(['id'=>'/^\d+$/']);
+            Route::match(['get', 'post'], '/finish/{id}', 'LAFController@finishPost')->where(['id'=>'[0-9]+']);
         });
 
 //        Route::group(['middleware' => 'checkInfo'], function () {
