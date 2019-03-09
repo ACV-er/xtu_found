@@ -33,9 +33,6 @@
             Route::post('/user/avatar', 'UserController@saveAvatar');
 
             Route::match(['get', 'post'], '/mark/{id}', 'LAFController@markPost')->where(["id"=>"/^\d+$/"]);
-        });
-
-        Route::group(['middleware' => 'checkInfo'], function () {
 
             Route::post('/submit', 'LAFController@submitPost')->middleware('deduplicate');
 
@@ -43,4 +40,9 @@
 
             Route::match(['get', 'post'], '/finish/{id}', 'LAFController@finishPost')->where(["id"=>"/^\d+$/"]);
         });
+
+//        Route::group(['middleware' => 'checkInfo'], function () {
+
+
+//        });
 //    });
