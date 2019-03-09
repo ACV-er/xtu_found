@@ -21,8 +21,8 @@ var head = new Vue({
 		    reader.onload = function(e){
 		        $d.setAttribute("src", e.target.result);
 		    };
-		    var head = document.querySelector('#head')
-			var data = new FormData(head);
+		    var avatar = document.querySelector('#avatar')
+			var data = new FormData(avatar);
 			var ajax = new XMLHttpRequest();
 			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
