@@ -1,5 +1,4 @@
 
-
 var detail  = new Vue({
 	el:'#detail',
 	data:{
@@ -55,7 +54,7 @@ window.onload = function(){
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
 		
-			var result = JSON.parse(ajax.responseText).data;
+			var result = JSON.parse(ajax.responseText);
 			
 			if(result.code == 6)
 			{
@@ -63,7 +62,8 @@ window.onload = function(){
 				window.location.href = "../login/login.html"
 			}
 			else{
-				console.log(result);
+				result = result.data;
+				
 				if(result.img!=null)
 					result.img ='https://found.sky31.com/upload/laf/' + result.img;
 				else
