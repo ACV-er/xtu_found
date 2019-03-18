@@ -51,7 +51,7 @@
     });
     Route::post('/manager/login', 'ManagerController@login');
     Route::group(['middleware' => 'managerCheck'], function (){
-        Route::get('/manager/post', '/manager', function (){
+        Route::get('/manager/post, /manager', function (){
             return view('manager.laf');
         });
 
