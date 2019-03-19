@@ -54,6 +54,7 @@
         Route::get('/manager/post', function (){
             return view('manager.laf');
         });
+
         Route::get('/manager', function (){
             return view('manager.laf');
         });
@@ -70,9 +71,9 @@
             return view('manager.other');
         });
 
-        Route::get('/user/search', 'UserController@searchUser');
+        Route::post('/user/search', 'UserController@searchUser');
         Route::get('/user/laf/{id}', 'UserController@manager_getUserPost');
-//        Route::get('/user/ban/{id}');
+        Route::get('/user/black/{id}', 'UserController@blackUser');
 
         Route::post('/manager/add', 'ManagerController@managerAdd');
         Route::get('/manager/delete/{id}', 'ManagerController@managerDelete');
