@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52ba9191-0ce8-4329-9c24-d31308c01ce5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ShowPost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ShowPost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/components/ShowPost.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="206" column="17" lean-forward="true" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
+            <state relative-caret-position="85">
+              <caret line="173" column="78" selection-start-line="173" selection-start-column="78" selection-end-line="173" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -455,12 +455,12 @@
       <workItem from="1552793949890" duration="44000" />
       <workItem from="1552794210141" duration="1265000" />
       <workItem from="1552884236102" duration="3359000" />
-      <workItem from="1552891548945" duration="983000" />
+      <workItem from="1552891548945" duration="1040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204166000" />
+    <option name="totallyTimeSpent" value="204223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1918" height="901" extended-state="6" />
@@ -826,8 +826,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/ShowPost.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="206" column="17" lean-forward="true" selection-start-line="206" selection-start-column="17" selection-end-line="206" selection-end-column="17" />
+        <state relative-caret-position="85">
+          <caret line="173" column="78" selection-start-line="173" selection-start-column="78" selection-end-line="173" selection-end-column="78" />
         </state>
       </provider>
     </entry>
