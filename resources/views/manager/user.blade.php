@@ -2,8 +2,8 @@
 
 
 @section('activity')
-    #manager {
-    color: #06C;
+    #user {
+        color: #06C;
     }
 @endsection
 @section('body')
