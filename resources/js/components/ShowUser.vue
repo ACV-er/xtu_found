@@ -115,7 +115,7 @@
     <div>
         <div class="search">
             <form action="" id="search" v-on:submit.prevent="search()">
-                <input width="60px" type="search" name="keyword" v-model="keyword" placeholder="请输入查找关键字 id, nickname"">
+                <input width="60px" type="search" name="keyword" v-model="keyword" placeholder="请输入查找关键字 id, nickname">
             </form>
             <table v-if="userShow" style="display: table">
                 <thead>
