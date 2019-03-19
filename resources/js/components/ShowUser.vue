@@ -212,7 +212,7 @@
                 nowUserId: -1,
                 userShow: false,
                 users: [],
-                keyword: [],
+                keyword: '',
                 postShow: false,
                 posts: [],
                 allInfoShow: false,
@@ -279,7 +279,6 @@
                             alert("查无此人");
                         }
                         this.users=data.data;
-                        console.log(data.data);
                         this.userShow=true;
                     } else {
                         alert('失败' + data.status + '\n' + data.data);

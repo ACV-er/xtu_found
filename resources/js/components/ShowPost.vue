@@ -97,9 +97,27 @@
         display: flex;
         justify-content:center;
     }
+
+    #search {
+        width: 100%;
+        padding: 0 40%;
+    }
+
+    .search {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        min-width: 1000px;
+    }
+
 </style>
 <template>
     <div>
+        <div class="search">
+            <form action="" id="search" v-on:submit.prevent="search()">
+                <input width="60px" type="search" name="keyword" v-model="keyword" placeholder="请输入查找关键字 id, nickname">
+            </form>
+        </div>
         <div class="main">
             <table>
                 <thead>
@@ -157,6 +175,7 @@
     export default {
         data() {
             return {
+                keyword: '',
                 posts: [],
                 allInfoShow: false,
                 allInfo:{}
@@ -167,13 +186,27 @@
                 let obj = this;
                 let ajax = new XMLHttpRequest();
                 ajax.onreadystatechange = function () {
-                    if (ajax.readyState === 4 && ajax.status === 200) {
+                    if (ajax.readyState == 4 && ajax.status == 200) {
                         obj.posts = JSON.parse(ajax.responseText).data;
                     }
                 };
                 ajax.open("GET", "https://found.sky31.com/laf", true);//false同步    true异步
                 ajax.send();
                 return true;
+            },
+            search(){
+                let keyword = this.keyword.trim().split(/\s/);
+                window.axios.post(`https://found.sky31.com/search` , "keyword="+JSON.stringify(keyword)).then(({ data }) => {
+                    if(data.code === 0) {
+                        if( data.data.length ===  0) {
+                            alert("没有相关发布");
+                        }
+                        this.posts=data.data;
+                    } else {
+                        alert('失败' + data.status + '\n' + data.data);
+                    }
+
+                });
             },
             getAllInfo(id) {
                 window.axios.get('https://found.sky31.com/laf/' + id).then(({ data }) => {
