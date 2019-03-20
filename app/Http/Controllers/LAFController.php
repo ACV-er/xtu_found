@@ -56,10 +56,13 @@
             $ids = array_column($result, 'user_id');
 
             $nickname = User::query()->whereIn('id', $ids)->get(['id', 'nickname'])->toArray();
-
+            $nicknames = array();
+            foreach ($nickname as $item) {
+                $nicknames[$item['id']] = $item['nickname'];
+            }
             return $this->msg(0, array(
                 'laf' => $result,
-                'nickname' => $nickname
+                'nickname' => $nicknames
             ));
         }
 
