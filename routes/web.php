@@ -33,9 +33,6 @@
             Route::post('/user/avatar', 'UserController@saveAvatar');
 
             Route::match(['get', 'post'], '/mark/{id}', 'LAFController@markPost')->where(["id"=>'[0-9]+']);
-        });
-
-        Route::group(['middleware' => 'checkInfo'], function () {
 
             Route::post('/submit', 'LAFController@submitPost')->middleware('deduplicate');
 
@@ -43,6 +40,7 @@
 
             Route::match(['get', 'post'], '/finish/{id}', 'LAFController@finishPost')->where(["id"=>'[0-9]+']);
         });
+
     });
 
 
