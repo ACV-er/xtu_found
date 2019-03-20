@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="52ba9191-0ce8-4329-9c24-d31308c01ce5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LAFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LAFController.php" afterDir="false" />
-    </list>
+    <list default="true" id="52ba9191-0ce8-4329-9c24-d31308c01ce5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LAFController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="146" column="14" lean-forward="true" selection-start-line="146" selection-start-column="14" selection-end-line="146" selection-end-column="14" />
+            <state relative-caret-position="153">
+              <caret line="136" column="46" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="46" />
               <folding>
                 <element signature="e#48#61#0#PHP" expanded="true" />
               </folding>
@@ -437,16 +435,15 @@
       <workItem from="1552977869855" duration="2593000" />
       <workItem from="1553062103868" duration="1216000" />
       <workItem from="1553086963066" duration="674000" />
-      <workItem from="1553100582171" duration="45000" />
+      <workItem from="1553100582171" duration="444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208822000" />
+    <option name="totallyTimeSpent" value="209221000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1918" height="901" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="25" width="1918" height="901" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27593583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -805,8 +802,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LAFController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="146" column="14" lean-forward="true" selection-start-line="146" selection-start-column="14" selection-end-line="146" selection-end-column="14" />
+        <state relative-caret-position="153">
+          <caret line="136" column="46" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="46" />
           <folding>
             <element signature="e#48#61#0#PHP" expanded="true" />
           </folding>
