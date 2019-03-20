@@ -237,7 +237,16 @@
                 "concat(`address`,`title`,`description`) like ? AND ".
                 "concat(`address`,`title`,`description`) like ?",
                 $keyword)->get()->toArray();
+            $ids = array_column($result, 'user_id');
 
-            return $this->msg(0, $result);
+            $nickname = User::query()->whereIn('id', $ids)->get(['id', 'nickname'])->toArray();
+            $nicknames = array();
+            foreach ($nickname as $item) {
+                $nicknames[$item['id']] = $item['nickname'];
+            }
+            return $this->msg(0, array(
+                'laf' => $result,
+                'nickname' => $nicknames
+            ));
         }
     }
