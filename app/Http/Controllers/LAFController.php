@@ -51,11 +51,16 @@
         public function postList() // 获取帖子列表
         {
             $result = Post::query()->where('updated_at', '>', date('Y-m-d H:i:s', time() - 86400 * 7))//86400秒一天
-            ->where('solve', false)
-                ->orderBy('updated_at', 'desc')
-                ->get();
+            ->where('solve', false)->orderBy('updated_at', 'desc')->get()->toArray();
 
-            return $this->msg(0, $result);
+            $ids = array_column($result, 'user_id');
+
+            $nickname = User::query()->whereIn('id', $ids)->get(['id', 'nickname'])->toArray();
+
+            return $this->msg(0, array(
+                'laf' => $result,
+                'nickname' => $nickname
+            ));
         }
 
         protected function saveImg(UploadedFile $file = null) //保存图片
