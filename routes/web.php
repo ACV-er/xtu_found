@@ -80,5 +80,8 @@
 
         Route::post('/manager/post/update/{id}', 'ManagerController@updatePost');
         Route::get('/manager/post/delete/{id}', 'ManagerController@deletePost');
+
+        Route::post('/add/mgc', 'ManagerController@addMgc');
+        Route::get('/init/mgc', 'ManagerController@initMgc');
     });
 

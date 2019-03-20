@@ -28,7 +28,8 @@
                 0 => '成功',
                 1 => '缺失参数',
                 3 => '错误访问',
-                4 => '未知错误'
+                4 => '未知错误',
+                12 => '包含敏感词'
             );
 
             $result = array(
@@ -88,6 +89,8 @@
         private function dataHandle(Request $request = null) //处理帖子信息
         {
 
+            $dfa = new \DFA();
+
             // 在发布的时候可以更新个人信息 诡异写法, 本人拒绝
             $mod = array(
                 'nickname' => '/^[^\s]{2,30}$/',
@@ -96,6 +99,7 @@
                 'wx' => '/(^[a-zA-Z]{1}[-_a-zA-Z0-9]{5,19}$)|(^$)/',
                 'class' => '/(^[^\s]{5,60}$)|(^$)/'
             );
+
             if (!$request->has(['nickname', 'qq', 'wx', 'phone', 'class'])) {
                 return $this->msg(1, __LINE__);
             }
@@ -110,6 +114,13 @@
             if (!$this->check($mod, $data)) {
                 return $this->msg(3, '数据格式错误' . __LINE__);
             };
+
+            // 检测敏感词
+            $nickname = $dfa->check($data['nickname']."");
+            $class = $dfa->check($data['class']."");
+            if($nickname !== true || $class !== true) {
+                return $this->msg(12,  $nickname."\n".$class);
+            }
 
             $user = User::query()->where('id', $request->session()->get('id'))->update($data);
 
@@ -141,6 +152,13 @@
             if ($data['date'] > date('Y-m-d H:i:s', time())) {
                 return $this->msg(3, '数据格式错误' . __LINE__);
             }
+
+            $title = $dfa->check($data['title']);
+            $description = $dfa->check($data['description']);
+            if($title !== true || $description !== true) {
+                return $this->msg(12,  $title."\n".$description);
+            }
+
             if ($request->hasFile('img')) {
                 $path = $this->saveImg($request->file('img'));
                 if (!$path) {
