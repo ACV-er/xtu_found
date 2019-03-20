@@ -164,7 +164,7 @@
             $result = new Post($data);
             $result = $result->save();
 
-            if($result){
+            if ($result) {
                 session(['time' => time()]); //防止重复提交
 
                 return $this->msg(0, $result);
@@ -213,7 +213,8 @@
             return $result ? $this->msg(0, null) : $this->msg(3, __LINE__);
         }
 
-        public function search(Request $request) {
+        public function search(Request $request)
+        {
             if (!$request->has(['keyword'])) {
                 return $this->msg(1, __LINE__);
             }
@@ -224,19 +225,21 @@
             if (!is_array($keyword) || count($keyword) > 5) {
                 return $this->msg(3, __LINE__);
             }
-            for($i=0; $i<count($keyword); $i++) {
-                $keyword[$i] = "%".$keyword[$i]."%";
+            for ($i = 0; $i < count($keyword); $i++) {
+                $keyword[$i] = "%" . $keyword[$i] . "%";
             }
-            for($i=count($keyword); $i<5; $i++) {
+            for ($i = count($keyword); $i < 5; $i++) {
                 $keyword[$i] = '%_%';
             }
             $result = Post::query()->whereRaw(
-                "concat(`address`,`title`,`description`) like ? AND ".
-                "concat(`address`,`title`,`description`) like ? AND ".
-                "concat(`address`,`title`,`description`) like ? AND ".
-                "concat(`address`,`title`,`description`) like ? AND ".
+                "concat(`address`,`title`,`description`) like ? AND " .
+                "concat(`address`,`title`,`description`) like ? AND " .
+                "concat(`address`,`title`,`description`) like ? AND " .
+                "concat(`address`,`title`,`description`) like ? AND " .
                 "concat(`address`,`title`,`description`) like ?",
-                $keyword)->get()->toArray();
+                $keyword)
+                ->where('updated_at', '>', date('Y-m-d H:i:s', time() - 86400 * 7))//86400秒一天
+                ->where('solve', false)->orderBy('updated_at', 'desc')->get()->toArray();
             $ids = array_column($result, 'user_id');
 
             $nickname = User::query()->whereIn('id', $ids)->get(['id', 'nickname'])->toArray();
