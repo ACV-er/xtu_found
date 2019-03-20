@@ -104,5 +104,4 @@ function getLaf(id){
 }
 window.onload = function(){
 	getuser();
-	
 }
