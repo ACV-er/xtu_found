@@ -27,7 +27,7 @@ var head = new Vue({
 			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
 					var result = JSON.parse(ajax.responseText);
-					console.log(result);
+					//console.log(result);
 				}
 			}
 			ajax.withCredentials = true;
@@ -38,9 +38,9 @@ var head = new Vue({
      	JsonToString:function(FormData){
 			var data = "";
 			Object.keys(FormData).forEach(function(key){
-		     	//console.log(key,FormData[key]);
+		     	////console.log(key,FormData[key]);
 		     	data += key + '=' + FormData[key] + '&';
-		     	//console.log(data);
+		     	////console.log(data);
 			});
 			data = data.substr(0,data.length-1);
 			return data;
@@ -99,11 +99,11 @@ var head = new Vue({
      	Ajax:function(FormData){
      		var ajax = new XMLHttpRequest();
      		var data = this.JsonToString(FormData);
-			//console.log(data);
+			////console.log(data);
 			ajax.onreadystatechange = function () {
 				if (ajax.readyState == 4 && ajax.status == 200) {
 					var result = JSON.parse(ajax.responseText);
-					console.log(result);
+					//console.log(result);
 					if(result.code == 0)
 					{
 						mui.alert("提交成功");
@@ -124,10 +124,11 @@ var head = new Vue({
 	}
 })
 window.onload = function(){
+      checkStage();
 	var ajax = new XMLHttpRequest();
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
-			console.log(ajax.responseText);
+			//console.log(ajax.responseText);
 			var result = JSON.parse(ajax.responseText);
 			
 			if(result.code == 6)

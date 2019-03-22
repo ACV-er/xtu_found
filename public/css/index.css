@@ -10,7 +10,7 @@ nav{
 	width: 100%;
 	padding-left: 6%;
 	padding-right: 6%;
-	margin-top: 75px;
+	margin-top: 30px;
 }
 nav>div{
 	
@@ -109,6 +109,7 @@ section a{
 	color:#000;
 }
 section a>h3{
+	font-size:20px;
 	position:relative;
 	margin-bottom: 15px;
 }
@@ -123,7 +124,7 @@ section a>h3>span{
 
 .hot{
 	padding: 5px;
-	width: 15%;
+	width: 17%;
 	display: inline-block;
 	margin-bottom: 0;
 	margin-left: 20px;
@@ -186,4 +187,14 @@ section a>h3>span{
 }
 .clearFloat{
 	clear:both;
+}
+@media screen and (max-width:365px){
+	*{
+		font-size:15px!important;
+	}
+}
+@media screen and (max-width:340px){
+	*{
+		font-size:14px!important;
+	}
 }

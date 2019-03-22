@@ -59,7 +59,9 @@ var detail  = new Vue({
 
 		
 })
+
 window.onload = function(){
+      checkStage();
 	var ajax = new XMLHttpRequest();
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {

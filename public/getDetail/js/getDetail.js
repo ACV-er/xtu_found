@@ -24,7 +24,7 @@ var detail  = new Vue({
 				ajax.onreadystatechange = function () {
 					if (ajax.readyState == 4 && ajax.status == 200) {
 							var result = JSON.parse(ajax.responseText).data;
-							console.log(result);
+							//console.log(result);
 							mui.alert("完璧归赵~皆大欢喜",function(){
 								window.history.go(-1);
 							})
@@ -56,7 +56,7 @@ function getuser(){
 	var ajax = new XMLHttpRequest();
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
-			console.log(ajax.responseText);
+			//console.log(ajax.responseText);
 			var result = JSON.parse(ajax.responseText);
 			if(result.code == 6)
 			{
@@ -76,13 +76,13 @@ function getuser(){
 }
 function getLaf(id){
 	var ajax = new XMLHttpRequest();
-	console.log("!!!")
+	//console.log("!!!")
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
 		
 			var result = JSON.parse(ajax.responseText).data;
-			console.log(id);
-			console.log(result.user_id);
+			//console.log(id);
+			//console.log(result.user_id);
 			if(id != result.user_id)
 			{
 				mui.alert("非法访问！",function(){
@@ -103,5 +103,7 @@ function getLaf(id){
 	ajax.send();
 }
 window.onload = function(){
+      checkStage();
 	getuser();
+	
 }

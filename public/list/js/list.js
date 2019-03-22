@@ -32,7 +32,7 @@ function search(){
 			strs=content.split(" "); //字符分割 
 			for (i=0;i<strs.length ;i++ ) 
 			{ 
-				console.log(strs[i]); //分割后的字符输出 
+				//console.log(strs[i]); //分割后的字符输出 
 			}
 			localStorage.setItem('keyword',strs);
 			localStorage.setItem('type',2);
@@ -54,22 +54,26 @@ function Ajaxsearch(){
 	var ajax = new XMLHttpRequest();
 	var data = "keyword=" + JSON.stringify(str_arr);
 	
-	console.log(data);
+	//console.log(data);
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
 			var result = JSON.parse(ajax.responseText);
-			console.log(result);
+			var nickname = JSON.parse(ajax.responseText).data.nickname;
+			//console.log(result);
 			if(result.code == 0)
 			{
-				result = result.data;
+				result = result.data.laf;
 				for(var i=0;i<result.length;i++)
 				{
 					if(result[i].img != null)
 						result[i].img = "https://found.sky31.com/upload/laf/" + result[i].img;
 					else
 						result[i].img ='../img/yuhan.jpg';
+					
+					result[i].nickname = nickname[result[i].user_id]; 
 					detail.detail.push(result[i]);
 				}
+				//console.log(detail.detail);
 			}
 		}
 	}
@@ -79,13 +83,15 @@ function Ajaxsearch(){
 	ajax.send(data);
 }
 window.onload = function(){
+      checkStage();
 	search();
 	var ajax = new XMLHttpRequest();
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
-			console.log(ajax.responseText);
-			var result = JSON.parse(ajax.responseText).data;
-			console.log(result);
+			//console.log(ajax.responseText);
+			var result = JSON.parse(ajax.responseText).data.laf;
+			var nickname = JSON.parse(ajax.responseText).data.nickname;
+			//console.log(result);
 			if(localStorage.getItem('type') == 2)
 			{
 				Ajaxsearch();
@@ -99,7 +105,9 @@ window.onload = function(){
 					else
 						result[i].img ='../img/yuhan.jpg';
 					result[i].time = result[i].updated_at.substr(5,5);
-					
+
+					result[i].nickname = nickname[result[i].user_id]; 
+					//console.log(result[i].nickname)
 					if(localStorage.getItem('type') == 1  && result[i].type == 1)
 						detail.detail.push(result[i]);
 					else if(localStorage.getItem('type')== 0  && result[i].type == 0)
