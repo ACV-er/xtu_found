@@ -139,6 +139,7 @@
                 $savePath = public_path() . '/upload/avatar';
                 $filename = session('id') . '.jpg';
                 $file->move($savePath, $filename);
+                compress($savePath."/".$filename);
                 User::query()->where('id', session('id'))->update(['avatar' => $filename]);
                 return $this->msg(0, '成功');
             } else {
@@ -214,6 +215,19 @@
         {
             $user = User::query()->where('id', $request->id)->first();
             $user->black = $user->black + 1;
+            $result = $user->save();
+
+            if ($result) {
+                return $this->msg(0, null);
+            } else {
+                return $this->msg(4, '失败,咨询管理员' . __LINE__);
+            }
+        }
+
+        public function unblackUser(Request $request)
+        {
+            $user = User::query()->where('id', $request->id)->first();
+            $user->black = 0;
             $result = $user->save();
 
             if ($result) {

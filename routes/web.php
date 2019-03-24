@@ -31,14 +31,15 @@
 
             Route::get('/user/info', 'UserController@getUserInfo');
             Route::post('/user/avatar', 'UserController@saveAvatar');
+            Route::group(['middleware' => 'banCheck'], function (){
+                Route::match(['get', 'post'], '/mark/{id}', 'LAFController@markPost')->where(["id"=>'[0-9]+']);
 
-            Route::match(['get', 'post'], '/mark/{id}', 'LAFController@markPost')->where(["id"=>'[0-9]+']);
+                Route::post('/submit', 'LAFController@submitPost')->middleware('deduplicate');
 
-            Route::post('/submit', 'LAFController@submitPost')->middleware('deduplicate');
+                Route::post('/update/{id}', 'LAFController@updatePost')->where(["id"=>'[0-9]+']);
 
-            Route::post('/update/{id}', 'LAFController@updatePost')->where(["id"=>'[0-9]+']);
-
-            Route::match(['get', 'post'], '/finish/{id}', 'LAFController@finishPost')->where(["id"=>'[0-9]+']);
+                Route::match(['get', 'post'], '/finish/{id}', 'LAFController@finishPost')->where(["id"=>'[0-9]+']);
+            });
         });
 
     });
@@ -72,6 +73,7 @@
         Route::post('/user/search', 'UserController@searchUser');
         Route::get('/user/laf/{id}', 'UserController@manager_getUserPost')->where(["id"=>'[0-9]+']);
         Route::get('/user/black/{id}', 'UserController@blackUser')->where(["id"=>'[0-9]+']);
+        Route::get('/user/unblack/{id}', 'UserController@unblackUser')->where(["id"=>'[0-9]+']);
 
         Route::post('/manager/add', 'ManagerController@managerAdd');
         Route::get('/manager/delete/{id}', 'ManagerController@managerDelete')->where(["id"=>'[0-9]+']);

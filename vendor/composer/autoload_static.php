@@ -31,6 +31,7 @@ class ComposerStaticInit310a8fb82bc7d5d864cea5755534fe73
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
         '836c3f9548f28f544c02aeeef0a575ee' => __DIR__ . '/../..' . '/app/helper/DFA.php',
+        'd7a0665592a9f002205cc644657e6b87' => __DIR__ . '/../..' . '/app/helper/compress.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -443,6 +444,7 @@ class ComposerStaticInit310a8fb82bc7d5d864cea5755534fe73
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Middleware\\banCheck' => __DIR__ . '/../..' . '/app/Http/Middleware/banCheck.php',
         'App\\Http\\Middleware\\completeInfo' => __DIR__ . '/../..' . '/app/Http/Middleware/completeInfo.php',
         'App\\Http\\Middleware\\loginCheck' => __DIR__ . '/../..' . '/app/Http/Middleware/loginCheck.php',
         'App\\Manager' => __DIR__ . '/../..' . '/app/Manager.php',
@@ -4044,6 +4046,10 @@ class ComposerStaticInit310a8fb82bc7d5d864cea5755534fe73
         'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
         'Symfony\\Polyfill\\Php72\\Php72' => __DIR__ . '/..' . '/symfony/polyfill-php72/Php72.php',
+        'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
+        'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
+        'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
