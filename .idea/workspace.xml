@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/components/ShowOther.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="255">
+              <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -394,15 +394,16 @@
       <workItem from="1553086963066" duration="674000" />
       <workItem from="1553100582171" duration="2945000" />
       <workItem from="1553230345976" duration="2437000" />
-      <workItem from="1553397168296" duration="1192000" />
+      <workItem from="1553397168296" duration="1233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215351000" />
+    <option name="totallyTimeSpent" value="215392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1918" height="901" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28235295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -768,8 +769,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/ShowOther.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
