@@ -14,7 +14,9 @@ var detail  = new Vue({
 			qq:'',
 			wx:'',
 			nickname:'',
-			'class':''
+			'class':'',
+			stu_card:"",
+			card_id:""
 		},
 		displaynone:true,
 	},
@@ -32,7 +34,7 @@ var detail  = new Vue({
 					}
 				}
 				ajax.withCredentials = true;
-				ajax.open("GET", "https://found.sky31.com/finish/"+ localStorage.getItem("id"), true);//false同步    true异步
+				ajax.open("GET", "https://found.sky31.com/finish/"+ getCookie("id"), true);//false同步    true异步
 				ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 				ajax.send();
 			},
@@ -56,7 +58,7 @@ function getuser(){
 	var ajax = new XMLHttpRequest();
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
-			//console.log(ajax.responseText);
+			console.log(ajax.responseText);
 			var result = JSON.parse(ajax.responseText);
 			if(result.code == 6)
 			{
@@ -98,7 +100,7 @@ function getLaf(id){
 		}
 	}
 	ajax.withCredentials = true;
-	ajax.open("GET", "https://found.sky31.com/laf/"+ localStorage.getItem("id"), true);//false同步    true异步
+	ajax.open("GET", "https://found.sky31.com/laf/"+ getCookie("id"), true);//false同步    true异步
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajax.send();
 }

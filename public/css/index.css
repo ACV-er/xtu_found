@@ -51,8 +51,8 @@ nav>div>a>p{
 	color:transparent;
 	background-size: 100% 100%;
 	background-color: #fff;
-	border: 3px solid transparent;
-	padding: 15px;
+	border: 0px solid transparent;
+	padding: 18px;
 	
 }
 #search{
@@ -102,7 +102,7 @@ section li{
 	overflow: hidden;
 	list-style-position: inside;
 	color:#000;
-	width:85%;
+	width:83%;
 	margin-right: 10px;
 }
 section a{
@@ -114,7 +114,7 @@ section a>h3{
 	margin-bottom: 15px;
 }
 section a>h3>span{
-	font-size:16px;
+	font-size:14px;
 	color:#666;
 
 	right:3%;
@@ -187,6 +187,18 @@ section a>h3>span{
 }
 .clearFloat{
 	clear:both;
+}
+.signCard{
+	color:#fff;
+	display: none;
+	float: right;
+	padding: 0 5px;
+	border-radius: 3px;
+	font-size:12px!important;
+	background-color: #f39f85;
+}
+.displayInline{
+	display: inline;
 }
 @media screen and (max-width:365px){
 	*{

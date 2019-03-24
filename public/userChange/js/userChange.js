@@ -1,14 +1,15 @@
+const empty_str = "";
 var head = new Vue({
 	el:'#head',
 	data:{
 		address:['金翰林','琴湖','北苑','南苑','逸夫楼','一教','三教'],
 		imgUrl:'./img/head.png',
-		nickname:'',
-		Class:'',
-		phone:'',
-		qq:'',
-		weixin:'',
-		avatar:''
+		nickname:empty_str,
+		Class:empty_str,
+		phone:empty_str,
+		qq:empty_str,
+		weixin:empty_str,
+		avatar:empty_str
 	},
 	methods:{
 		upload:function(c,d){
@@ -58,25 +59,30 @@ var head = new Vue({
 				return false;
 			}
 			patt = /^[^\s]{5,30}$/;
-			if(FormData['class'] != "" && patt.test(FormData['class']) == false)
+			if((FormData['class'] == "" || FormData['class'] == null))
+			{
+				mui.alert("班级为必填项哦");
+				return false;
+			}
+			if((FormData['class'] != "" && FormData['class'] != null)  && patt.test(FormData['class']) == false)
 			{
 				mui.alert("班级长度在5-30个字符，不含空格");
 				return false;
 			}
 			patt = /^1[0-9]{10}$/;
-			if(FormData.phone != "" && patt.test(FormData.phone) == false)
+			if((FormData.phone != ""&&FormData.phone != null) && patt.test(FormData.phone) == false)
 			{
 				mui.alert("手机号格式错误");
 				return false;
 			}
 			patt = /^[0-9]{5,13}$/;
-			if(FormData.qq != "" && patt.test(FormData.qq) == false)
+			if((FormData.qq != ""&&FormData.qq != null) && patt.test(FormData.qq) == false)
 			{
 				mui.alert("qq长度在5-13个字符，不含空格");
 				return false;
 			}
 			patt = /^[a-zA-Z]{1}[-_a-zA-Z0-9]{5,19}$/;
-			if(FormData.wx != "" && patt.test(FormData.wx) == false)
+			if((FormData.wx != ""&&FormData.wx != null)!= "" && patt.test(FormData.wx) == false)
 			{
 				mui.alert("微信号格式不符");
 				return false;
@@ -84,7 +90,8 @@ var head = new Vue({
 			return true;
 		},
      	submit:function(){
-     		
+			
+			
 			var FormData = {
 				nickname:this.nickname,
 				'class':this.Class,
@@ -92,6 +99,18 @@ var head = new Vue({
 				qq:this.qq,
 				wx:this.weixin
 			};
+			if(FormData.phone == null)
+			{
+				FormData.phone = "";
+			}
+			if(FormData.qq == null)
+			{
+				FormData.qq = "";
+			}
+			if(FormData.wx == null)
+			{
+				FormData.wx = "";
+			}
 			if(this.judge(FormData)==true)
 				this.Ajax(FormData);
 			
@@ -106,8 +125,15 @@ var head = new Vue({
 					//console.log(result);
 					if(result.code == 0)
 					{
-						mui.alert("提交成功");
-						window.location.href = '../user/user.html'
+						mui.alert("提交成功",function(){
+							window.location.href = '../user/user.html'
+						});
+						
+					}
+					else if(result.code == 3)
+					{
+						mui.alert("数据格式错误");
+					
 					}
 					else
 					{

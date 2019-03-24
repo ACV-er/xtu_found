@@ -25,6 +25,7 @@
 				</div>
 				<img v-bind:src="information.img" id="bigImg" v-bind:class="{displaynone:displaynone }">
 				<div>
+					<p v-bind:class={displaynone:!information.stu_card}>卡号:{{information.card_id}}</p>
 					<p>时间:{{information.date}}</p>
 					<p>地点:{{information.address}}</p>
 					<p>班级:{{information.class}}</p>
@@ -41,6 +42,7 @@
 		  
 	</body>
 	<script type="text/javascript" src="../js/checkStage.js"></script>
-<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="../js/cookie.js"></script>
+ <script type="text/javascript" src="../js/vue.js"></script>
     <script type="text/javascript" src="./js/findDetail.js"></script>
 </html>

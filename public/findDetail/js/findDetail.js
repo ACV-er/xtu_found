@@ -14,7 +14,9 @@ var detail  = new Vue({
 			qq:'',
 			wx:'',
 			nickname:'',
-			'class':''
+			'class':'',
+			stu_card:"",
+			card_id:""
 		},
 		displaynone:true,
 	},
@@ -44,7 +46,7 @@ var detail  = new Vue({
 				}
 			}
 			ajax.withCredentials = true;
-			ajax.open("GET", "https://found.sky31.com/mark/"+ localStorage.getItem("id"), true);//false同步    true异步
+			ajax.open("GET", "https://found.sky31.com/mark/"+ getCookie("id"), true);//false同步    true异步
 			ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			ajax.send();
 		},
@@ -84,7 +86,7 @@ window.onload = function(){
 		}
 	}
 	ajax.withCredentials = true;
-	ajax.open("GET", "https://found.sky31.com/laf/"+ localStorage.getItem("id"), true);//false同步    true异步
+	ajax.open("GET", "https://found.sky31.com/laf/"+ getCookie("id"), true);//false同步    true异步
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajax.send();
 }

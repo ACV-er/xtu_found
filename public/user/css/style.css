@@ -16,12 +16,7 @@ body {
 	border-radius: 50%;
 	
 }
-.head>img:before{
-	content: '+';
-	font-size:20px;
-	position:absolute;
-	bottom: 0px;
-}
+
 .head h2{
 	margin: 10px 0px;
 	font-size:1.5em;

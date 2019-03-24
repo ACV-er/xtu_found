@@ -115,13 +115,13 @@ var head = new Vue({
 					//console.log(head.type);
 					if(result.code == 0&&this.type == 1)
 					{
-						localStorage.setItem('type',1)
+						setCookie('type',1)
 						window.location.href = "../list/list.html"
 					}
 						
 					else if(result.code == 0&&this.type == 0)
 					{
-						localStorage.setItem('type',0)
+						setCookie('type',0)
 						window.location.href = "../list/list.html"
 					}
 					else if(result.code == 9||result.code==10)
@@ -138,7 +138,7 @@ var head = new Vue({
 				}
 			}
 			ajax.withCredentials = true;
-			ajax.open("POST", "https://found.sky31.com/update/"+localStorage.getItem('id'), true);//false同步    true异步
+			ajax.open("POST", "https://found.sky31.com/update/"+getCookie('id'), true);//false同步    true异步
 			//ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			ajax.send(data);
 		}
@@ -163,7 +163,7 @@ function loadForm(){
 		}
 	}
 	ajax.withCredentials = true;
-	ajax.open("GET", "https://found.sky31.com/laf/"+localStorage.getItem('id'), true);//false同步    true异步
+	ajax.open("GET", "https://found.sky31.com/laf/"+getCookie('id'), true);//false同步    true异步
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajax.send();
 }
@@ -185,7 +185,7 @@ function limitDate(){
 window.onload = function(){
       checkStage();
 	head.address = head.addressAll[0];
-	if(localStorage.getItem('id')==undefined||localStorage.getItem('id')==null)
+	if(getCookie('id')==undefined||getCookie('id')==null)
 	{
 			mui.alert("访问路径错误");
 			window.location.href = "../index.html"

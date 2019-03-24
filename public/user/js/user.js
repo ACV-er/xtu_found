@@ -70,8 +70,9 @@ var detail  = new Vue({
 	},
 	methods:{
 		getId:function(e){
-			localStorage.setItem("id", e.target.dataset.id);
-			localStorage.setItem("type", e.target.dataset.type);
+		
+			setCookie("id", e.target.dataset.id);
+			setCookie("type", e.target.dataset.type);
 			window.location.href="../getDetail/getDetail.html";
 		}
 	}

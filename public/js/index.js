@@ -51,12 +51,14 @@ var find = new Vue({
 	},
 	methods:{
 		getId:function(e){
-			localStorage.setItem("id", e.target.dataset.id);
+			setCookie("id",e.target.dataset.id);
+	
 			window.location.href="./findDetail/findDetail.html";
 		},
 		getType:function(e){
-			localStorage.setItem("type", e.target.dataset.type);
+			setCookie("type",e.target.dataset.type);
 			window.location.href="./list/list.html";
+
 		}
 	}
 	
@@ -68,13 +70,13 @@ var get = new Vue({
 	},
 	methods:{
 		getId:function(e){
-			localStorage.setItem("id", e.target.dataset.id);
-			
+			setCookie("id",e.target.dataset.id);
 			window.location.href="./findDetail/findDetail.html";
 		},
 		getType:function(e){
-			localStorage.setItem("type", e.target.dataset.type);
+			setCookie("type",e.target.dataset.type);
 			window.location.href="./list/list.html";
+			
 		}
 	}
 })
@@ -85,15 +87,24 @@ function laf(){
 			//console.log(ajax.responseText);
 			var result = JSON.parse(ajax.responseText).data.laf;
 			//console.log(result);
-			for(var i=0;i<Math.min(result.length,8);i++)
+			var a=0,b=0;
+			for(var i=0;i<result.length;i++)
 			{
 				//if(result.img != null)
 				//result.img = "https://found.sky31.com/upload/laf/" + result.lost[i].img;
 				result[i].time = result[i].updated_at.substr(5,5);
-				if(result[i].type==1)
+				if(result[i].type==1&&a<8){
 					find.findTitle.push(result[i]);
-				else
+					a++;
+				}
+				else if(result[i].type==0&&b<8){
 					get.getTitle.push(result[i]);
+					b++
+				}
+				else{
+					break;
+				}
+					
 			}
 			
 		}
@@ -117,8 +128,8 @@ function search(){
 					strs.splice(i,1);
 				
 			} 
-			localStorage.setItem('keyword',strs);
-			localStorage.setItem('type',2);
+			setCookie('keyword',strs);
+			setCookie('type',2);
 			window.location.href = "./list/list.html";
 		}		
 	})
@@ -145,7 +156,6 @@ function checkStage(){
 
 }
 window.onload = function(){
-      checkStage();
 	checkStage();
 	search();
 	var ajax = new XMLHttpRequest();

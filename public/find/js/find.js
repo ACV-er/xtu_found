@@ -128,13 +128,13 @@ var head = new Vue({
 					//console.log(result);
 					if(result.code == 0 && head.type == 1)
 					{
-						localStorage.setItem('type',1)
+						setCookie('type',1)
 						window.location.href = "../list/list.html"
 					}
 						
 					else if(result.code == 0&&head.type == 0)
 					{
-						localStorage.setItem('type',0)
+						setCookie('type',0)
 						window.location.href = "../list/list.html"
 					}
 						
