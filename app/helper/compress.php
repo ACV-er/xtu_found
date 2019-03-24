@@ -1,7 +1,7 @@
 <?php
     function compress($src_img) {
-        $dst_w = 300;
-        $dst_h = 200;
+        $dst_w = 900;
+        $dst_h = 600;
         list($src_w,$src_h)=getimagesize($src_img);  // 获取原图尺寸
 
         $dst_scale = $dst_h/$dst_w; //目标图像长宽比
