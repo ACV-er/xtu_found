@@ -182,7 +182,7 @@
 
         public function getUserPost()
         {
-            $list = Post::query()->where('user_id', session('id'))->get();
+            $list = Post::query()->where('user_id', session('id'))->orderBy('updated_at', 'desc')->get();
             return $this->msg(0, $list);
         }
 
