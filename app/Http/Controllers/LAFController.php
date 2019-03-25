@@ -226,8 +226,9 @@
                 return $this->msg(3, __LINE__);
             }
 
-            if($result['stu_card'] === '1' && $result['type'] === '0') {
-                $data['card_id'] = $result['crad_id'];
+            if($result->stu_card === 1 && $result->type === 0) {
+
+                $data['card_id'] = $result->card_id;
                 $api_url = "https://api.sky31.com/GongGong/set_lost_found_notice.php";
                 $api_url = $api_url . "?role=" . env('ROLE') . '&hash=' . env('HASH') . '&sid=' . $data['card_id'] . '&opt=cancel';
                 $ch = curl_init();
