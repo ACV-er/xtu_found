@@ -169,8 +169,7 @@
             }
 
             $data['user_id'] = session('id');
-
-            if($data['stu_card'] === 1 && $data['type'] === 0) { //推送至校园卡丢失者手机
+            if($data['stu_card'] === '1' && $data['type'] === '0') { //推送至校园卡丢失者手机
                 $api_url = "https://api.sky31.com/GongGong/set_lost_found_notice.php";
                 $api_url = $api_url . "?role=" . env('ROLE') . '&hash=' . env('HASH') . '&sid=' . $data['card_id'] . '&opt=push';
                 $ch = curl_init();
@@ -228,7 +227,7 @@
             }
             $result = $result->update(["solve" => true]);
 
-            if($result['stu_card'] === 1 && $result['type'] === 0) {
+            if($result['stu_card'] === '1' && $result['type'] === '0') {
                 $data['card_id'] = $result['crad_id'];
                 $api_url = "https://api.sky31.com/GongGong/set_lost_found_notice.php";
                 $api_url = $api_url . "?role=" . env('ROLE') . '&hash=' . env('HASH') . '&sid=' . $data['card_id'] . '&opt=cancel';
