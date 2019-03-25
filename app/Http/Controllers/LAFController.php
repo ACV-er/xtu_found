@@ -225,7 +225,6 @@
             if (!$result->user_id == session('id')) {
                 return $this->msg(3, __LINE__);
             }
-            $result = $result->update(["solve" => true]);
 
             if($result['stu_card'] === '1' && $result['type'] === '0') {
                 $data['card_id'] = $result['crad_id'];
@@ -237,6 +236,7 @@
                 curl_exec($ch);
                 curl_close($ch);
             }
+            $result = $result->update(["solve" => true]);
 
             return $result ? $this->msg(0, null) : $this->msg(3, __LINE__);
         }
