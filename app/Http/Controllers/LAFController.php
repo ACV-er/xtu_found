@@ -170,6 +170,16 @@
 
             $data['user_id'] = session('id');
 
+            if($data['stu_card' === 1]) { //推送至校园卡丢失者手机
+                $api_url = "https://api.sky31.com/GongGong/set_lost_found_notice.php";
+                $api_url = $api_url . "?role=" . env('ROLE') . '&hash=' . env('HASH') . '&sid=' . $data['card_id'] . '&opt=push';
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $api_url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_exec($ch);
+                curl_close($ch);
+            }
+
             return $data;
         }
 
@@ -217,6 +227,17 @@
                 return $this->msg(3, __LINE__);
             }
             $result = $result->update(["solve" => true]);
+
+            if( $result['stu_card'] === 1) {
+                $data['card_id'] = $result['crad_id'];
+                $api_url = "https://api.sky31.com/GongGong/set_lost_found_notice.php";
+                $api_url = $api_url . "?role=" . env('ROLE') . '&hash=' . env('HASH') . '&sid=' . $data['card_id'] . '&opt=push';
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $api_url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_exec($ch);
+                curl_close($ch);
+            }
 
             return $result ? $this->msg(0, null) : $this->msg(3, __LINE__);
         }
