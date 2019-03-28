@@ -23,7 +23,22 @@
         }
 
 // 剪裁
-        $source=imagecreatefromjpeg($src_img);
+        $type = exif_imagetype($src_img);
+
+        switch($type) {
+            case IMAGETYPE_JPEG :
+                $source = imagecreatefromjpeg($src_img);
+                break;
+            case IMAGETYPE_PNG :
+                $source = imagecreatefrompng($src_img);
+                break;
+            case IMAGETYPE_GIF :
+                $source = imagecreatefromgif($src_img);
+                break;
+            default:
+                $source=imagecreatefromjpeg($src_img);
+                break;
+        }
         $croped=imagecreatetruecolor($w, $h);
         imagecopy($croped,$source,0,0,$x,$y,$src_w,$src_h);
 
@@ -36,7 +51,20 @@
 
 // 保存
         unlink($src_img);
-        imagejpeg($target, $src_img);
+        switch($type) {
+            case IMAGETYPE_JPEG :
+                imagejpeg($target, $src_img); // 存储图像
+                break;
+            case IMAGETYPE_PNG :
+                imagepng($target, $src_img);
+                break;
+            case IMAGETYPE_GIF :
+                imagegif($target, $src_img);
+                break;
+            default:
+                imagejpeg($target, $src_img);
+                break;
+        }
         imagedestroy($target);
     }
 
