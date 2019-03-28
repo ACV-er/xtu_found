@@ -5,6 +5,7 @@ var loginForm = new Vue({
 		id:'',
 		psw:'',
 		contact:'',
+		pc:true
 	},
 	methods:{
 		JsonToString:function(FormData){
@@ -39,13 +40,9 @@ var loginForm = new Vue({
 					if (ajax.readyState == 4 && ajax.status == 200) {
 						var result = JSON.parse(ajax.responseText);
 						//console.log(result);
-						if(result.code == 2)
+						if(result.code == 2||result.code == 3)
 						{
 							mui.alert("账号密码错误");
-						}
-						else if(result.code == 3)
-						{
-							mui.alert("学号或密码格式错误");
 						}
 						else if(result.code != 0)
 						{
@@ -178,5 +175,9 @@ var contact = new Vue({
 )
 
 window.onload = function(){
-	checkStage();
+	var stage = checkStage();
+	if(stage == 'pc')
+		loginForm.pc = true;
+	else
+		loginForm.pc = false;
 }

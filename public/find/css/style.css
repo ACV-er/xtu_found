@@ -12,9 +12,12 @@ body {
 	
 }
 .head>img{
-	width: 20%;
+	width: 80px;
+	height: 80px;
 	border-radius: 50%;
-	margin-bottom: 20px;
+	margin-bottom: 20px ;
+	background-size: cover;
+	background-position: 50% 50%;
 	
 }
 .head>img:before{
@@ -23,20 +26,7 @@ body {
 	position:absolute;
 	bottom: 0px;
 }
-nav{
-	position: relative;
-	line-height: 50px;
-	background-color: #3E8FDE;
-	color:#fff;
-	text-align: center;
-	font-size: 16px;
-	height: 50px;
-}
-.back{
-	position:absolute;
-	left:5%;
-	top: 30%;
-}
+
 form{
 	background-color: #fff;
 	position:relative;
@@ -85,10 +75,11 @@ textarea{
 	left: 10px;
 	display: inline-block;
 	color:#BDBDBD;
-	
 	border-radius: 50%;
 	text-align: center;
-	padding: 5px;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
 	border:1px solid #bbbbbb;
 	font-size: 30px;
 	
@@ -122,15 +113,15 @@ input[type="radio"] + label::before {
     line-height: 1; 
 }
 input[type="radio"]:checked + label::before {
-	border: 1px solid #007AFF;
-    background-color: #007AFF;
+	border: 1px solid #4cb4e7;
+    background-color: #4cb4e7;
     background-clip: content-box;
     width: 0.6em;
     height: 0.6em;
     padding: 0.15em;
 }
 input[type="radio"]:checked + label{
-	color:#007AFF;
+	color:#4cb4e7;
 }
 input[type="radio"] {
    visibility: hidden;
@@ -176,10 +167,11 @@ button{
 	margin-top: 30px;
 	width: 30%;
 	color:#fff;
-	background-color: #3E8FDE;
+	background-color: #4cb4e7;
 	border-radius: 15px;
 	
 }
+
 .displaynone{
 	display: none!important;
 }

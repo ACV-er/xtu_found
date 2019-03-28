@@ -40,6 +40,7 @@ window.onload = function(){
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
 			//console.log(ajax.responseText);
+			var random = Math.round(Math.random()*100);
 			var result = JSON.parse(ajax.responseText);
 		
 			if(result.code == 6)
@@ -51,7 +52,7 @@ window.onload = function(){
 				head.id = result.data.stu_id;
 		
 				head.nickname = result.data.nickname;
-				head.imgUrl = 'https://found.sky31.com/upload/avatar/' + result.data.avatar;
+				head.imgUrl = "background-image:url('https://found.sky31.com/upload/avatar/" + result.data.avatar + '?a='+ random + "');";
 			}
 		}
 	}

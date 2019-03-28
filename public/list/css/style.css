@@ -1,4 +1,4 @@
-
+﻿
 body {
 	font-family: '苹方 常规';
 	width: 100%;
@@ -24,37 +24,25 @@ body {
 	font-size:1.5em;
 }
 .head h3{
-	color:#4CD964; 
+	color:#2AC845; 
 	font-weight: normal;
 	margin: 10px 0px;
 	font-size:1.2em;
 }
-nav{
-	position: relative;
-	line-height: 50px;
-	background-color: #3E8FDE;
-	color:#fff;
-	text-align: center;
-	font-size: 16px;
-	height: 50px;
-}
-.back{
-	position:absolute;
-	left:5%;
-	top: 30%;
-}
+
 button{
-	line-height: 0px;
+	padding: 0px 12px;
+	line-height: 30px;
 	height: 30px;
 	width: 60px;
-	color: #5677FC;
+	color: #859af3;
 	background-color:#fff;
 	border-radius: 20px;
 	margin-left: 40px;
 	margin-top: 10px;
 }
 button a{
-	color: #5677FC;
+	color: #859af3;
 	
 }
 #search{
@@ -82,7 +70,7 @@ section{
 .head>button{
 	
 	margin-top: 30px;
-	border:1px solid #007AFF;
+	border:1px solid #859af3;
 	
 }
 .head>button:hover{
@@ -90,7 +78,7 @@ section{
 }
 .head a{
 	width: 100%;
-	color:#007AFF;
+	color:#859af3;
 }
 section ul{
 	padding-left: 3%;
@@ -104,6 +92,10 @@ section li{
 	color:#000;
 	width:85%;
 	margin-right: 10px;
+}
+.section-icon{
+	position:relative;
+	right:30px;
 }
 .markDetail{
 	
@@ -132,7 +124,7 @@ section li{
 	margin-top: 10px;
 	
 }
-.markDetail div span{
+.markDetail div>span{
 	position: absolute;
 	top: 20px;
 	font-size: 1em;
@@ -150,4 +142,16 @@ section li{
 	color:#2AC845;
 	margin: 0;
 }
-
+.signCard{
+	color:#fff;
+	display: none;
+	margin-right: 5px;
+	vertical-align: text-top;
+	padding: 3px 5px;
+	border-radius: 3px;
+	font-size:12px!important;
+	background-color: #f39f85;
+}
+.displayInline{
+	display: inline;
+}

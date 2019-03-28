@@ -1,4 +1,4 @@
-*{
+﻿*{
 	font-family: '苹方 常规';
 }
 body{
@@ -21,19 +21,25 @@ nav>div{
 	height: 25%;
 }
 nav>div>a>i{
-	
+	margin-top: 10px;
+	display: inline-block;
+	width:50px;
+	height: 50px;
 	background-color: #FFF;
 	border-radius: 50%;
-	color:#3E8FDE;
-	border: 3px solid #3E8FDE;
+	color:#333;
+	border: 1px solid #bdbdbd;
 	padding: 15px;
 }
 nav>div:nth-child(2)>a>i{
-	color: #3E8FDE;
+	margin-top:0px;
+	width:60px;
+	height: 60px;
+	padding: 20px;
+	color: #333;
 	border-radius: 50%;
-	background-color: #fff;
-	border: 3px solid #3E8FDE;
-	padding: 15px;
+	background-color: #eee;
+	border: 1px solid #bdbdbd;
 }
 nav>div>a>p{
 	color:#000;
@@ -42,20 +48,22 @@ nav>div>a>p{
 }
 .select{
 	transition: 0.3s;
-	background-color:#e6e6e6; 
+	background-color:#f7f7f7!important; 
 }
 
 #user
 {
 	background-repeat: no-repeat;
 	color:transparent;
-	background-size: 100% 100%;
 	background-color: #fff;
 	border: 0px solid transparent;
 	padding: 18px;
-	
+	background-size: cover;
+	background-position: 50% 50%;
 }
+
 #search{
+	line-height: 34px;
 	background-color: #f3f4f5;
 	box-sizing: border-box;
 	/*background-image: url(../img/search.png);*/
@@ -70,10 +78,15 @@ nav>div>a>p{
 	width: 75%;
 	border-radius: 17px;
 }
+#searchForm{
+	margin: 0 auto;
+	text-align: center;
+	max-width: 996px;
+}
 button{
-	font-size: 16px;
+
 	color:#fff;
-	background-color:#3E8FDE;
+	background-color:#859af3;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	vertical-align: middle;
@@ -95,6 +108,7 @@ section ul{
 	
 }
 section li{
+	height:21px;
 	font-size: 16px;
 	float: left;
 	white-space: nowrap;
@@ -121,14 +135,68 @@ section a>h3>span{
 	position: absolute;
 	
 }
+.markDetail{
+	display: none;
+	position: relative;
+	box-sizing: border-box;
+	padding-left:5% ;
+	padding-right: 5%;
+	width: 100%;
+}
 
+.markDetail img{
+	/*float: left;*/
+	margin-top: 10px;
+	width: 28%;
+	/*height: 85px;*/
+	
+}
+.markDetail div{
+	vertical-align: bottom;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/*height: 80px;*/
+	margin-left: 5%;
+	display: inline-block;
+	margin-top: 10px;
+	
+}
+.markDetail div>span{
+	position: absolute;
+	top: 10px;
+	font-size: 1em;
+	display: inline-block;
+	height: 2.8em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+
+	
+}
+
+.markDetail p{
+	
+	font-size: 0.8em;
+	color:#2AC845;
+	margin: 0;
+}
+.signCard{
+	color:#fff;
+	display: none;
+	margin-right: 5px;
+	vertical-align: text-top;
+	padding: 3px 5px;
+	border-radius: 3px;
+	font-size:12px!important;
+	background-color: #f39f85;
+}
 .hot{
+	text-align: center;
 	padding: 5px;
 	width: 17%;
 	display: inline-block;
 	margin-bottom: 0;
-	margin-left: 20px;
-	font-size: 16px;
+	font-size: 20px;
 	border-radius: 10px;
 	vertical-align: middle;
 }
@@ -141,6 +209,7 @@ section a>h3>span{
 	
 }
 .searchBar{
+	background-color: #e6e6e6;
 	box-sizing: border-box;
 	width:50%;
 	text-align: center;
@@ -156,7 +225,20 @@ section a>h3>span{
 .bar{
 	width: 50%;
 	height: 2px;
-	background: #3E8FDE;
+	background: #859af3;
+}
+.selectBox{
+	text-align: left;
+	width: 200%;
+}
+.search-icon{
+	position: relative;
+	right: 30px;
+}
+.box{
+	position: relative;
+	float: left;
+	width: 50%;
 }
 .selectOption{
 	transition:0.3s;
@@ -166,7 +248,8 @@ section a>h3>span{
 	display: inline-block;
 	width: 20%;
 	margin-left: 10%;
-	padding: 5px;
+	height: 32px;
+	line-height: 32px;
 	border:1px solid #333333;
 	border-radius: 20px;
 	font-size:14px;
@@ -178,12 +261,13 @@ section a>h3>span{
 	display: inline-block;
 	width: 20%;
 	margin-left: 10%;
-	padding: 5px;
+	height: 32px;
+	line-height: 32px;
 	border-radius: 20px;
 	font-size:14px;
 	color:#fff;
-	background-color: #3e8fde;
-	border:1px solid #3e8fde;
+	background-color: #859af3;
+	border:1px solid #859af3;
 }
 .clearFloat{
 	clear:both;
@@ -197,16 +281,93 @@ section a>h3>span{
 	font-size:12px!important;
 	background-color: #f39f85;
 }
+.signCardB{
+	color:#fff;
+	display: none;
+	margin-right: 5px;
+	vertical-align: text-top;
+	padding: 3px 5px;
+	border-radius: 3px;
+	font-size:12px!important;
+	background-color: #f39f85;
+}
 .displayInline{
 	display: inline;
+}
+.displayNone{
+	display: none;
+}
+.left{
+	left:50%;
+}
+.icon-zhuzhuangtuicon{
+	font-size: 24px!important;
 }
 @media screen and (max-width:365px){
 	*{
 		font-size:15px!important;
 	}
+	nav>div>a>i{
+		width:48px;
+		height: 48px;
+		background-color: #FFF;
+		border-radius: 50%;
+		color:#333;
+		border: 1px solid #bdbdbd;
+		padding: 15px;
+	}
+	nav>div:nth-child(2)>a>i{
+		width:58px;
+		height: 58px;
+		padding: 20px;
+		color: #333;
+		border-radius: 50%;
+		background-color: #eee;
+		border: 1px solid #bdbdbd;
+	}
+	.icon-zhuzhuangtuicon{
+		font-size: 24px!important;
+	}
 }
 @media screen and (max-width:340px){
 	*{
 		font-size:14px!important;
+	}
+	nav>div>a>i{
+		width:46px;
+		height: 46px;
+		background-color: #FFF;
+		border-radius: 50%;
+		color:#333;
+		border: 1px solid #bdbdbd;
+		padding: 15px;
+	}
+	nav>div:nth-child(2)>a>i{
+		width:56px;
+		height: 56px;
+		padding: 20px;
+		color: #333;
+		border-radius: 50%;
+		background-color: #eee;
+		border: 1px solid #bdbdbd;
+	}
+	.icon-zhuzhuangtuicon{
+		font-size: 24px!important;
+	}
+}
+@media screen and (min-width:998px){
+	section{
+		border: 0;
+		width: 40%;
+		float: left;
+	}
+	#find{
+		margin-left: 10%
+	}
+	section ul{
+		display: none;
+	}
+	.markDetail{
+		display: block;
 	}
 }

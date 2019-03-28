@@ -23,7 +23,7 @@ var searchForm = new Vue({
 })
 function search(){
 	var search = document.querySelector('#search');
-	
+	var searchIcon = document.querySelector('#search-icon');
 	search.addEventListener('keypress',function(e){
 		if(e.keyCode == 13)
 		{
@@ -38,6 +38,21 @@ function search(){
 			setCookie('type',2);
 			Ajaxsearch(); 
 		}		
+	})
+	searchIcon.addEventListener('click',function(e){
+		detail.detail = [];
+		var content = searchForm.search;
+		strs=content.split(" "); //字符分割
+		
+		for (i=0;i<strs.length ;i++ ) 
+		{ 
+			if(strs[i]==" "||strs[i]=="")
+				strs.splice(i,1);
+			
+		} 
+		setCookie('keyword',strs);
+		setCookie('type',2);
+		Ajaxsearch();
 	})
 }
 function Ajaxsearch(){

@@ -28,28 +28,15 @@ body {
 	font-size:1.5em;
 }
 .head h3{
-	color:#4CD964; 
+	color:#2AC845; 
 	font-weight: normal;
 	margin: 10px 0px;
 	font-size:1.2em;
 }
-nav{
-	position: relative;
-	line-height: 50px;
-	background-color: #3E8FDE;
-	color:#fff;
-	text-align: center;
-	font-size: 16px;
-	height: 50px;
-}
-.back{
-	position:absolute;
-	left:5%;
-	top: 30%;
-}
+
 nav>button{
 	color: #fff;
-	background-color:#5677FC ;
+	background-color:#808080 ;
 	position:absolute;
 	bottom: 5px;
 	right: 5%;
@@ -66,7 +53,7 @@ section{
 .head>button{
 	
 	margin-top: 30px;
-	border:1px solid #007AFF;
+	border:1px solid #859af3;
 	
 }
 .head>button:hover{
@@ -74,7 +61,7 @@ section{
 }
 .head a{
 	width: 100%;
-	color:#007AFF;
+	color:#859af3;
 }
 section ul{
 	padding-left: 3%;
@@ -99,15 +86,18 @@ section li{
 .markDetail h3{
 	font-size: 1.2em;
 }
-.markDetail img{
+.markDetail>div>img{
 	width: 50%;
+	max-width: 200px;
 	
 	
 }
 #bigImg{
 	position: fixed;
 	width: 80%;
-	left: 10%;
+	max-width: 500px;
+	right: 0px;
+	left: 0px;
 	top:0px;
 	bottom: 0px;
 	margin: auto;
@@ -140,7 +130,7 @@ section li{
 	margin-top: 30px;
 	width: 26%;
 	color:#fff;
-	background-color: #3E8FDE;
+	background-color: #859af3;
 	margin-left: 37%;
 
 }
@@ -161,6 +151,6 @@ section li{
 	width: 20%;
 	color:#fff;
 	margin-left: 20%;
-	background-color: #3E8FDE;
+	background-color: #859af3;
 	
 }

@@ -2,7 +2,7 @@ var head = new Vue({
 	el:'#find',
 	data:{
 		address:"",
-		addressAll:['金翰林','琴湖','北苑','南苑','逸夫楼','一教','三教'],
+		addressAll:['一教','二教','三教','一田','二田','逸夫楼','经管楼','兴湘','学活','坑里','联建','金翰林','琴湖','南苑','北苑','北五','乐园','雅苑'],
 		nickname:'',
 		Class:'',
 		phone:'',
@@ -120,7 +120,7 @@ var head = new Vue({
 			ajax.onreadystatechange = function () {
 				if(ajax.readyState == 1)
 				{
-					mui.toast("文件上传中,请稍后",{duration:100000})
+					mui.toast("发布中,请稍后",{duration:100000})
 				}
 				if (ajax.readyState == 4 && ajax.status == 200) {
 					mui.closePopups();
@@ -137,7 +137,10 @@ var head = new Vue({
 						setCookie('type',0)
 						window.location.href = "../list/list.html"
 					}
-						
+					else if(result.code == 7)
+					{
+						mui,alert("亲!你已进入黑名单~请联系管理员")
+					}
 					else if(result.code == 9||result.code==10)
 					{
 						mui.alert("服务器正忙，请等10秒再提交");
