@@ -203,7 +203,7 @@
             if (!is_array($keyword) || count($keyword) > 5) {
                 return $this->msg(3, __LINE__);
             }
-            $num_array = array();
+            $num_array = array(-1); //如果持续为空 会导致 下面的sql 出现 {`stu_id` IN ()} 小括号内为空的情况
             foreach ($keyword as $value) {
                 if( preg_match('/^\d+$/', $value) ) {
                     array_push($num_array, $value);
