@@ -1,5 +1,6 @@
 <?php
     function compress($src_img) {
+        ini_set('memory_limit','256M');
         $dst_w = 900;
         $dst_h = 600;
         list($src_w,$src_h)=getimagesize($src_img);  // 获取原图尺寸
