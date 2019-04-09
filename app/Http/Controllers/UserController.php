@@ -210,12 +210,12 @@
                 }
             }
             $str = join('|', $keyword);
-            $num = join(',', $num_array);
+			$num = join(',', $num_array);
             $result = User::query()->whereRaw("`nickname` REGEXP ?", array($str))
-                ->orWhereRaw("`stu_id` IN (?) or `id` IN (?)", array($num, $num))
+                ->orWhereRaw("`stu_id` IN ($num) or `id` IN ($num)")
                 ->get(['id', 'nickname', 'class', 'wx', 'qq', 'phone', 'stu_id', 'black'])->toArray();
-
-            return $this->msg(0, $result);
+			
+			return $this->msg(0, $result);
         }
 
         public function blackUser(Request $request)
