@@ -339,3 +339,29 @@ section a>h3>span{
 		font-size: 24px!important;
 	}
 }
+@media screen and (max-width:340px){
+	*{
+		font-size:14px!important;
+	}
+	nav>div>a>i{
+		width:46px;
+		height: 46px;
+		background-color: #FFF;
+		border-radius: 50%;
+		color:#333;
+		border: 1px solid #bdbdbd;
+		padding: 15px;
+	}
+	nav>div:nth-child(2)>a>i{
+		width:56px;
+		height: 56px;
+		padding: 20px;
+		color: #333;
+		border-radius: 50%;
+		background-color: #eee;
+		border: 1px solid #bdbdbd;
+	}
+	.icon-zhuzhuangtuicon{
+		font-size: 24px!important;
+	}
+}
