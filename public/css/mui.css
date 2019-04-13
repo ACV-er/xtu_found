@@ -1265,8 +1265,8 @@ input[type='submit']:enabled:active, input[type='submit'].mui-active:enabled,
 .mui-btn-green.mui-active:enabled
 {
     color: #fff;
-    border: 1px solid #2ac845;
-    background-color: #2ac845;
+    border: 1px solid #006699;
+    background-color: #006699;
 }
 
 .mui-btn-warning,

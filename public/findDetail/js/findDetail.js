@@ -6,7 +6,8 @@ var detail  = new Vue({
 		information:{
 			title:'',
 			description:'',
-			img:'../img/yuhan.jpg',
+			img:"../img/yuhan.jpg",
+			avatar:"",
 			date:'',
 			updated_at:'',
 			address:'',
@@ -67,9 +68,9 @@ window.onload = function(){
 	var ajax = new XMLHttpRequest();
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
-		
+			var random = Math.round(Math.random()*100);
 			var result = JSON.parse(ajax.responseText);
-			
+			console.log(result);
 			if(result.code == 6)
 			{
 				mui.alert("请先登录");
@@ -81,6 +82,9 @@ window.onload = function(){
 					result.img ='https://found.sky31.com/upload/laf/' + result.img;
 				else
 					result.img ='../img/yuhan.jpg'
+
+				if(result.avatar!=null)
+					result.avatar = "background-image:url('https://found.sky31.com/upload/avatar/" + result.avatar + '?a='+ random + "')";
 				detail.information = result;
 			}
 		}

@@ -81,7 +81,7 @@ function getLaf(id){
 	//console.log("!!!")
 	ajax.onreadystatechange = function () {
 		if (ajax.readyState == 4 && ajax.status == 200) {
-		
+			var random = Math.round(Math.random()*100);
 			var result = JSON.parse(ajax.responseText).data;
 			//console.log(id);
 			//console.log(result.user_id);
@@ -96,6 +96,8 @@ function getLaf(id){
 				result.img ='https://found.sky31.com/upload/laf/' + result.img;
 			else
 				result.img ='../img/yuhan.jpg'
+			if(result.avatar!=null)
+				result.avatar = "background-image:url('https://found.sky31.com/upload/avatar/" + result.avatar + '?a='+ random + "')";
 			detail.information = result;
 		}
 	}
@@ -105,7 +107,7 @@ function getLaf(id){
 	ajax.send();
 }
 window.onload = function(){
-      checkStage();
+	checkStage();
 	getuser();
 	
 }

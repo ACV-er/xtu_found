@@ -1,6 +1,4 @@
-﻿*{
-	font-family: '苹方 常规';
-}
+﻿
 body{
 	background-color: #fff;
 }
@@ -21,25 +19,26 @@ nav>div{
 	height: 25%;
 }
 nav>div>a>i{
-	margin-top: 10px;
+
 	display: inline-block;
 	width:50px;
 	height: 50px;
 	background-color: #FFF;
 	border-radius: 50%;
-	color:#333;
-	border: 1px solid #bdbdbd;
+	color:#787878;
+	border: 1px solid #787878;
 	padding: 15px;
 }
 nav>div:nth-child(2)>a>i{
-	margin-top:0px;
+	/* margin-top:0px;
 	width:60px;
 	height: 60px;
-	padding: 20px;
-	color: #333;
+	padding: 20px; */
+	font-weight: bold;
+	color: #fff;
 	border-radius: 50%;
-	background-color: #eee;
-	border: 1px solid #bdbdbd;
+	background-color: #787878;
+	/*border: 1px solid #bdbdbd;*/
 }
 nav>div>a>p{
 	color:#000;
@@ -63,6 +62,7 @@ nav>div>a>p{
 }
 
 #search{
+	font-size:16px;
 	line-height: 34px;
 	background-color: #f3f4f5;
 	box-sizing: border-box;
@@ -74,7 +74,7 @@ nav>div>a>p{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin-top: 10px;
-	
+	text-align: left;
 	width: 75%;
 	border-radius: 17px;
 }
@@ -100,7 +100,6 @@ section{
 	box-shadow: border-box;
 	padding: 3%;
 	width: 100%;
-	border: 1px solid #efeff4;
 }
 section ul{
 	padding-left: 0%;
@@ -122,10 +121,20 @@ section li{
 section a{
 	color:#000;
 }
-section a>h3{
-	font-size:20px;
+section>h3{
+	font-weight: normal;
+	font-size:30px;
 	position:relative;
 	margin-bottom: 15px;
+}
+section>span{
+	font-weight: normal;
+	font-size:14px;
+	color:#bbbbbb;
+}
+.icon-compass,.icon-flag{
+	font-size:32px!important;
+	margin-right: 10px;
 }
 section a>h3>span{
 	font-size:14px;
@@ -177,7 +186,7 @@ section a>h3>span{
 .markDetail p{
 	
 	font-size: 0.8em;
-	color:#2AC845;
+	color:#006699;
 	margin: 0;
 }
 .signCard{
@@ -191,12 +200,13 @@ section a>h3>span{
 	background-color: #f39f85;
 }
 .hot{
+	color:#787878;
 	text-align: center;
 	padding: 5px;
-	width: 17%;
+	width: 20%;
 	display: inline-block;
 	margin-bottom: 0;
-	font-size: 20px;
+	font-size: 16px;
 	border-radius: 10px;
 	vertical-align: middle;
 }

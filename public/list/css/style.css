@@ -1,5 +1,6 @@
 ﻿
 body {
+	background-color: #ededed;
 	font-family: '苹方 常规';
 	width: 100%;
 	margin: 0px;
@@ -24,7 +25,7 @@ body {
 	font-size:1.5em;
 }
 .head h3{
-	color:#2AC845; 
+	color:#006699; 
 	font-weight: normal;
 	margin: 10px 0px;
 	font-size:1.2em;
@@ -45,26 +46,30 @@ button a{
 	color: #859af3;
 	
 }
+
 #search{
-	height: 30px;
+	margin-bottom: 0px;
+	height: 35px;
 	border: 0;
-	background-color: #f3f4f5;
+	background-color: #fff;
 	box-sizing: border-box;
-	
+	position: relative;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	margin-top: 10px;
-	margin-left: 5%;
-	width: 60%;
+	margin-top: 15px;
+	width: 75%;
 	border-radius: 15px;
 }
 section{
+	margin-top: 10px;
 	background-color: #fff;
 	position:relative;
 	box-shadow: border-box;
 	padding: 3%;
-	width: 100%;
-	border-top: 10px solid #fff5ff;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 15px;
 }
 
 .head>button{
@@ -102,7 +107,7 @@ section li{
 	box-sizing: border-box;
 	padding-left:5% ;
 	padding-right: 5%;
-	width: 100%;
+	width: 95%;
 }
 .markDetail h3{
 	font-size: 1.2em;
@@ -115,32 +120,43 @@ section li{
 	
 }
 .markDetail div{
-	vertical-align: bottom;
+	width: 60%;
+	vertical-align: top;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	/*height: 80px;*/
-	margin-left: 5%;
+	margin-left: 3%;
 	display: inline-block;
 	margin-top: 10px;
 	
 }
 .markDetail div>span{
-	position: absolute;
 	top: 20px;
 	font-size: 1em;
 	display: inline-block;
-	height: 2.8em;
+	height: 1.3em;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	
-
-	
 }
 
 .markDetail p{
 	font-size: 0.8em;
-	color:#2AC845;
+	color:#bbbbbb;
 	margin: 0;
+}
+#more{
+	top:auto;
+	position: absolute;
+	right: 3%;
+	font-size: 0.8em;
+	bottom: 8%;
+	color: #3e859f;
+}
+article{
+	font-size: 14px;
+	height: 42px;
+	overflow: hidden;
+	color:#787878;
 }
 .signCard{
 	color:#fff;
@@ -154,4 +170,101 @@ section li{
 }
 .displayInline{
 	display: inline;
+}
+input::-webkit-input-placeholder{
+	color:#bbbbbb;
+	font-size: 16px;
+}
+.hot{
+	color:#787878;
+	text-align: center;
+	padding: 5px;
+	width: 20%;
+	display: inline-block;
+	margin-bottom: 0;
+	font-size: 16px;
+	border-radius: 10px;
+	vertical-align: middle;
+}
+.floatLeft{
+	float: left;
+	
+}
+.floatRight{
+	float: right;
+	
+}
+.searchBar{
+	background-color: #e6e6e6;
+	box-sizing: border-box;
+	width:50%;
+	text-align: center;
+	height: 50px;
+	line-height: 40px;
+	padding: 5px;
+}
+.select{
+	transition: 0.3s;
+	background-color:#f7f7f7!important; 
+}
+#popover{
+	max-width: 600px;
+	width: 95%;
+	padding-bottom: 20px;
+}
+.bar{
+	width: 50%;
+	height: 2px;
+	background: #859af3;
+}
+.selectBox{
+	text-align: left;
+	width: 200%;
+}
+.search-icon{
+	position: relative;
+	right: 30px;
+}
+.box{
+	position: relative;
+	float: left;
+	width: 50%;
+}
+.selectOption{
+	transition:0.3s;
+	text-align: center;
+	color:#333333;
+	margin-top: 10px;
+	display: inline-block;
+	width: 20%;
+	margin-left: 10%;
+	height: 32px;
+	line-height: 32px;
+	border:1px solid #333333;
+	border-radius: 20px;
+	font-size:14px;
+}
+.selected{
+	transition:0.3s;
+	text-align: center;
+	margin-top: 10px;
+	display: inline-block;
+	width: 20%;
+	margin-left: 10%;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 20px;
+	font-size:14px;
+	color:#fff;
+	background-color: #859af3;
+	border:1px solid #859af3;
+}
+.clearFloat{
+	clear:both;
+}
+.displayNone{
+	display: none;
+}
+.left{
+	left:50%;
 }

@@ -16,11 +16,44 @@ var searchForm = new Vue({
 	el:'#searchForm',
 	data:{
 		search:'',
+		hotObject:['校园卡','身份证','手机','耳机','水杯','书包','钥匙','眼镜'],
+		hotAddress:['一教','二教','三教','一田','二田','逸夫楼','经管楼','兴湘','学活','坑里','联建','金翰林','琴湖','南苑','北苑','北五','乐园','雅苑'],
+		addr:false,
+		obj:true,
+		left:true
 	},
 	methods:{
-
+		addInSearch:function(e){
+			
+			if(e.target.className == 'selectOption'){
+				this.search += e.target.innerHTML + " ";
+				e.target.className = 'selected';
+				
+			}
+			else{
+				e.target.className = 'selectOption';
+				var pos = this.search.indexOf(e.target.innerHTML);
+				this.search= this.search.split(e.target.innerHTML).join("");
+			
+				
+			}
+		},
+		AddressTab:function(){
+			//this.hotAddress = ['一教','二教','三教','一田','二田','逸夫楼','经管楼','兴湘','学活','坑里','联建','金翰林','琴湖','南苑','北苑','北五食堂','乐园食堂'];
+			this.obj = false;
+			this.addr = true;
+			this.left = false;
+		
+		},
+		ObjectTab:function(){
+			//this.hotObject = ['校园卡','身份证','手机','耳机','水杯','书包','钥匙','眼镜']
+			this.left = true;
+			this.addr = false;
+			this.obj = true;
+		},
 	}
 })
+
 function search(){
 	var search = document.querySelector('#search');
 	var searchIcon = document.querySelector('#search-icon');

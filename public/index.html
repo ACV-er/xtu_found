@@ -25,12 +25,12 @@
 	</header>
 	<nav id="nav">
 		<div><a href="./contact/contact.html"><i class="iconfont icon-gantanhao" ></i><p>规则说明</p></a></div>
-		<div><a href="./find/find.html"><i class="iconfont icon-user"></i><p>发布</p></a></div>
+		<div><a href="./find/find.html"><i class="iconfont icon-plus"></i><p>发布</p></a></div>
 		<div v-if="login"><a href="./login/login.html" ><i class="fa fa-user"></i><p>登录</p></a></div>
 		<div v-if="user"><a href="./user/user.html" ><i id="user" class="fa fa-user" v-bind:style="imgUrl"></i><p>个人中心</p></a></div>
 	</nav>
 	<div id="searchForm">
-		<a href="#popover" id="openPopover" class="hot" ><i class="iconfont icon-zhuzhuangtuicon"></i></a>
+		<a href="#popover" id="openPopover" class="hot" >筛选<i class="iconfont icon-list"></i></a>
 		<input type="search" id="search" placeholder="输入关键字,多个词空格隔开"   v-model="search" />
 		<span id="search-icon" class="fa fa-search search-icon"></span>
 		<div id="popover" class="mui-popover  ">
@@ -48,7 +48,7 @@
 		</div>
 	</div>
 	<section id="find">
-		<a  class="more" ><h3>寻物<span data-type='1' @click="getType">更多></span></h3></a>
+		<h3><i class="iconfont icon-compass"></i>寻物</h3>
 		<ul  v-for="item in findTitle">
 			<a>
 				<li class="overhide" v-bind:data-id = "item.id" @click="getId">{{item.title}}
@@ -65,9 +65,10 @@
 				<p v-bind:data-id = "item.id" v-bind:data-type="item.type"> 发布者：{{item.nickname}}</p>
 			</div>
 		</div>
+		<span data-type='1' @click="getType">查看更多></span>
 	</section>
 	<section id="get">
-		<a  class="more"><h3>招领<span data-type='0' @click="getType">更多></span></h3></a>
+		<h3><i class="iconfont icon-flag"></i>招领</h3>
 		<ul  v-for="item in getTitle">
 			<a>
 				<li class="overhide" v-bind:data-id = "item.id" @click="getId">{{item.title}}
@@ -84,6 +85,7 @@
 				<p v-bind:data-id = "item.id" v-bind:data-type="item.type"> 发布者：{{item.nickname}}</p>
 			</div>
 		</div>
+		<span data-type='0' @click="getType">查看更多></span>
 	</section>
 </body>
 <script src="js/index.js"></script>
