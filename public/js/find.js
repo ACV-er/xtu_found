@@ -150,7 +150,7 @@ var head = new Vue({
 						mui.alert("有敏感词汇!请修改");
 					}
 					else{
-						mui.alert("发布失败，请联系管理员");
+						mui.alert("发布失败，请联系管理员\ncode: "+result.code+"\ndata: "+result.data);
 					}
 				}
 			}
