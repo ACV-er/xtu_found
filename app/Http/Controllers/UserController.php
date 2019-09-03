@@ -43,14 +43,30 @@
 
         private function chechUser($sid, $password)
         {
-            $api_url = "https://api.sky31.com/edu-new/student_info.php";
-            $api_url = $api_url . "?role=" . env('ROLE') . '&hash=' . env('HASH') . '&sid=' . urlencode($sid) . '&password=' . urlencode($password);
+            $data = [];
+            $jwxt_api_url = "https://api.sky31.com/edu-new/student_info.php";
+            $jwxt_api_url = $jwxt_api_url . "?role=" . env('ROLE') . '&hash=' . env('HASH') . '&sid=' . urlencode($sid) . '&password=' . urlencode($password);
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $api_url);
+            curl_setopt($ch, CURLOPT_URL, $jwxt_api_url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $output = curl_exec($ch);
             curl_close($ch);
-            return json_decode($output, true);
+
+            $data = json_decode($output, true);
+            if($data["code"] == 0) {
+                return $data;
+            }
+
+            $portal_api_url = "https://api.sky31.com/PortalCode/edu-new/student_info.php";
+            $portal_api_url = $portal_api_url . "?role=" . env('ROLE') . '&hash=' . env('HASH') . '&sid=' . urlencode($sid) . '&password=' . urlencode($password);
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $portal_api_url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $output = curl_exec($ch);
+            curl_close($ch);
+
+            $data = json_decode($output, true);
+            return $data;
         }
 
         public function login(Request $request)
@@ -214,7 +230,7 @@
             $result = User::query()->whereRaw("`nickname` REGEXP ?", array($str))
                 ->orWhereRaw("`stu_id` IN ($num) or `id` IN ($num)")
                 ->get(['id', 'nickname', 'class', 'wx', 'qq', 'phone', 'stu_id', 'black'])->toArray();
-			
+
 			return $this->msg(0, $result);
         }
 
